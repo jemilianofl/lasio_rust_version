@@ -61,7 +61,12 @@ from .las_items import CurveItem, HeaderItem, SectionItems
 from .las_version import version
 from .reader import open_file
 
-__version__ = version()
+try:
+    from lasio_rust import get_version as _rust_version
+except Exception:  # pragma: no cover - rust module optional
+    _rust_version = None
+
+__version__ = _rust_version() if _rust_version else version()
 
 
 def read(file_ref, **kwargs):
