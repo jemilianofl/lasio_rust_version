@@ -157,6 +157,21 @@ Contributions are invited and welcome.
 
 See [Contributing](https://lasio.readthedocs.io/en/latest/contributing.html) for how to get started.
 
+## Rust extension
+
+An experimental Rust module is provided in `rust/` using
+[PyO3](https://pyo3.rs/).  It currently exposes
+`lasio_rust.get_version()` which returns the crate version as a string.
+
+To build and install the extension locally you can use
+[maturin](https://github.com/PyO3/maturin):
+
+```bash
+pip install maturin
+cd rust && maturin develop
+```
+
+
 ## License
 
 [MIT](https://github.com/kinverarity1/lasio/blob/master/LICENSE)
